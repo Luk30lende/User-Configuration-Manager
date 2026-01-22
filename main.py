@@ -35,3 +35,12 @@ def delete_setting(settings, key):
         return "Setting not found!"
     del settings[key]
     return f"Setting '{key}' deleted successfully!"
+
+def view_settings(settings):
+    if not settings:
+        return "No settings available."
+
+    output = "Current User Settings:\n"
+    for key, value in settings.items():
+        output += f"{key.capitalize()}: {value}\n"   
+    return output
